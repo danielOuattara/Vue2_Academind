@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 7</title>
+</head>
+<body>
+
+    <style>
+        .user {
+            color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 7px;
+        }
+        .user-1 {
+            background-color: rgb(157, 0, 0);
+        }
+        .user-2 {
+            background-color: rgb(0, 95, 0);
+        }
+        .user-3 {
+            background-color: rgb(45, 45, 253);
+        }
+    </style>
+
+    <div id="app">
+        <h1> {{ title }}</h1>
+
+        <hr/>
+
+        <div class='user user-1'>
+            <h2> Username : {{ name }}</h2>
+        </div>
+
+        <hr/>
+
+        <div class='user user-2' v-for='(user) in users'>
+            <h2> Users name : {{ user.username }}</h2>
+        </div>
+
+        <hr>
+        
+        <app-user></app-user>
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <script>
+        Vue.component('app-user', {
+            data: function() {
+                return {
+                    users: [ 
+                        {username: 'Max'}, 
+                        {username: 'Chris'}, 
+                        {username: 'Anna'} 
+                    ]
+                };
+            },
+
+            template:`  <div>
+                            <div class='user user-3' v-for='user in users'>
+                                <h2> Users name : {{ user.username }}</h2>
+                            </div>
+                        </div> `
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Hello World !',
+                name:  'Max',
+
+                users: [ 
+                    {username: 'Julie'}, 
+                    {username: 'Gaïa'}, 
+                    {username: 'Amaya'} 
+                ]
+            },
+            component: {
+                // local component if any !
+            }
+        });
+    </script>
+</body>
+</html>

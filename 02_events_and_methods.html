@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Video 2</title>
+</head>
+<body>
+
+    <div id="app">
+        <button v-on:click='title ="events and methods with VueJS"'> Change Title 1</button>
+        <button v-on:click='changeTitle'> Change Title 2</button>
+        <button @click='title3 +=" Awesome"'> Change Title 3</button>
+        <h1> {{ title  }}</h1>
+        <h1> {{ title2 }}</h1>
+        <h1> {{ title3 }}</h1>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+    
+        new Vue ({
+            el: '#app',
+            data: {
+                title: 'Hello Vue !',
+                title2: 'Welcome',
+                title3: 'Vue is ',
+                title4: 'Oups'
+            },
+        
+            methods: {
+                changeTitle() {
+                    this.title2 = "I say Welcome Again!"
+                }
+        
+            }
+        })
+    
+    </script>
+</body>
+</html>

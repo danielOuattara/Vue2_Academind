@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3</title>
+</head>
+<body>
+
+    <style>
+        .red {
+            background-color: rgb(255,0,0);
+            padding: 15px;
+            color: #fff;
+        }
+
+        .blue {
+            background-color: #0f5974;
+            color: #fff;
+            padding: 10px;
+
+        }
+        .green {
+            background-color: green;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
+
+    <div id="app">
+
+        <input type="text" v-on:input="cssClass = $event.target.value">
+
+        <h1 v-bind:class="cssClass"> Class is : {{ cssClass }} </h1>
+
+        <h1 :class="cssClass"> Class is : {{ cssClass }} </h1>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        
+        new Vue ({
+            el: '#app',
+            data: {
+                cssClass:''
+            
+            }
+        })   
+    </script>
+</body>
+</html>

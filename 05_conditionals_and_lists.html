@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Video 5</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- conditionals: v-if, v-else, v-show -->
+
+        <button v-on:click="show = !show">Show / Hide</button>
+        <h2 v-if="show"> I am part time visible !</h2>
+        <h2> Am I visible ?</h2>
+
+        <hr/>
+        
+        <button @click='present = !present'>Show / Hide</button>
+        <h2 v-if="present"> v-if true :  I am part time visible !</h2>
+        <h2 v-else> v-else :  Am I visible ?</h2>
+        
+        <hr/>
+        
+        <button @click='active = !active'>Show / Hide</button>
+        <h2 v-if='active'> I am part time visible !</h2>
+        <h2 v-show='active'> Am I visible ?</h2>
+        
+        <hr/> <!-- Lists output -->
+
+        <ul>
+            <li v-for='(person) in persons'> {{person.name}}</li>
+        </ul>
+
+        <ul>
+            <li v-for='(person, index) in persons'> {{ person.name}} {{index }} </li>
+        </ul>    
+        <ul>
+            <li v-for='(person, index) in persons'> {{ person.name + ' ' + index }} </li>
+        </ul>    
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+
+        new  Vue({
+            el: '#app',
+            data: {
+                show:    true,
+                present: true,
+                active:  true,
+                persons: [
+                    {name: 'Max'  , age: 27},
+                    {name: 'Chris', age: 30},
+                    {name: 'Nora' , age: 25},
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

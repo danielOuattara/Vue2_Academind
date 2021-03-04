@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Video 6</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1> {{ title }}</h1>
+        <h1> {{ theTitle }}</h1>
+        <h1> {{ message | uppercaseGlobal }}</h1>
+        <h1> {{ info | lowercaseLocal }}</h1>
+        <h1> {{ info | lowercaseLocal | uppercaseGlobal }}</h1>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+
+
+        // global filter
+        Vue.filter('uppercaseGlobal', function(value) {
+            return value.toUpperCase();
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                title:   'Hello World !',
+                message: 'Hello world again !',
+                info:    'Vus Is AWESOME !'
+            },
+
+            computed: {
+                theTitle: function() {
+                    return this.title.toUpperCase();
+                },
+            }, 
+            
+            filters: {   // local filter
+                    lowercaseLocal: function(value) {
+                        return value.toLowerCase()
+                    }
+            }
+
+        });
+    </script>
+</body>
+</html>
