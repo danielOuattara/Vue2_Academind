@@ -10,7 +10,7 @@
 </template>
 
 
-// <script>
+<script>
     import Input_2 from './Input_2.vue';
     export default {
         components: {

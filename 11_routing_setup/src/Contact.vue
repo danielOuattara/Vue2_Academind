@@ -1,4 +1,4 @@
 
 <template>
-    <h1>I am home</h1>
+    <h1>Contact </h1>
 </template>

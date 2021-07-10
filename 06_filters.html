@@ -14,6 +14,7 @@
         <h1> {{ message | uppercaseGlobal }}</h1>
         <h1> {{ info | lowercaseLocal }}</h1>
         <h1> {{ info | lowercaseLocal | uppercaseGlobal }}</h1>
+        <h1> {{ info | upperCaseLocal }}</h1>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -42,6 +43,10 @@
             filters: {   // local filter
                     lowercaseLocal: function(value) {
                         return value.toLowerCase()
+                    },
+
+                    upperCaseLocal: function(value) {
+                        return value.toUpperCase()
                     }
             }
 

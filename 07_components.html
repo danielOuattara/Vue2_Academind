@@ -26,21 +26,15 @@
     </style>
 
     <div id="app">
-        <h1> {{ title }}</h1>
-
-        <hr/>
+        <h1> {{ title }}</h1><hr/>
 
         <div class='user user-1'>
             <h2> Username : {{ name }}</h2>
-        </div>
-
-        <hr/>
+        </div><hr/>
 
         <div class='user user-2' v-for='(user) in users'>
             <h2> Users name : {{ user.username }}</h2>
-        </div>
-
-        <hr>
+        </div><hr>
         
         <app-user></app-user>
         
@@ -50,6 +44,13 @@
 
     <script>
         Vue.component('app-user', {
+
+            template:`  <div>
+                            <div class='user user-3' v-for='user in users'>
+                                <h2> Users name : {{ user.username }}</h2>
+                            </div>
+                        </div> `,
+
             data: function() {
                 return {
                     users: [ 
@@ -58,21 +59,14 @@
                         {username: 'Anna'} 
                     ]
                 };
-            },
-
-            template:`  <div>
-                            <div class='user user-3' v-for='user in users'>
-                                <h2> Users name : {{ user.username }}</h2>
-                            </div>
-                        </div> `
+            }
         });
 
         new Vue({
             el: '#app',
             data: {
-                title: 'Hello World !',
+                title: 'Learning Vue JS component !',
                 name:  'Max',
-
                 users: [ 
                     {username: 'Julie'}, 
                     {username: 'Gaïa'}, 

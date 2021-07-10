@@ -10,12 +10,12 @@
     <div id="app">
         
         <button v-on:click="increment">Increment</button>
-        <!-- <button @click="decrement">decrement</button> -->
+        <button @click="decrement">decrement</button>
 
         <br/><br/>
 
         <button v-on:click="increment">Increment</button>
-        <!-- <button @click="decrement">decrement</button> -->
+        <button @click="decrement">decrement</button>
 
         <h2>Counter: {{ counter }}</h2>
         <h2>Clicks:  {{ clicks }}</h2>
@@ -37,10 +37,10 @@
                     this.clicks++;
                     // this.counter = this.clicks + 2;
                 },
-            //     decrement() {
-            //         this.clicks--;
-            //         this.counter = this.clicks * 2;
-            //     }
+                decrement() {
+                    this.clicks--;
+                    // this.counter = this.clicks * 2;
+                }
             },
 
             computed: {
